@@ -14,35 +14,34 @@
 body {
     background-color: var(--secondary-2);
     font-family: 'Karla', sans-serif;
-    Font-size: 16px;
+    font-size: 16px;
     line-height: 1.6;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 
 .container {
     background-color: #fff;
     width: 50%;
-    margin: 50px auto;
+    margin: 30px auto;
     border-radius: 10px;
 }
 
 .row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     "col-1 col-1"
-    "col-2 col-3";
+    "col-2 col-3"; */
 }
 
 .row > .col:nth-child(2) {
     background-color: hsl(179, 62%, 43%);
-    border-radius: 0 0 0 10px;
-
+    border-radius: 0;
 }
 
 .row > .col:nth-child(3) {
     background-color: hsl(179, 58%, 58%);
-    border-radius: 0 0 10px 0;
+    border-radius: 0 0 10px 10px;
 }
 
 .col {
@@ -51,32 +50,33 @@ body {
 
 .col p {
     color: var(--secondary-1);
-    /* font-size: 0.8rem; */
-    font-weight: 400;
+    font-size: 0.85rem;
+    /* font-weight: 700; */
 }
 
 .col h4 {
     color: #fff;
 }
 
-.col-1 {
+/* .col-1 {
     grid-area: col-1;
-}
+} */
 
-.col-2 {
+/* .col-2 {
     grid-area: col-2;
-}
+} */
 
-.col-3 {
+/* .col-3 {
     grid-area: col-3;
     padding-right: 35px;
-}
+} */
 
 .col-1 h3 {
     color: hsl(179, 62%, 43%);
     font-weight: 700;
     margin-top: 2px;
     margin-bottom: 15px;
+    text-shadow: 1px 1px 1px (hsl(179, 62%, 43%));
 }
 
 .col-1 h4 {
@@ -85,6 +85,7 @@ body {
 
 .col-1 p {
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .col-2 h4, .col-3 h4 {
@@ -96,22 +97,49 @@ body {
 }
 
 .col-2 span {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .btn {
-    background-color: hsl(71, 73%, 54%);;
-    width: 100%;
-    padding: 13px 30px;
+    background-color: hsl(71, 73%, 54%);
+    color: hsl(204, 43%, 93%);
+    width: 85%;
+    padding: 13px 20px;
     border: 0;
     border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 
-@media (min-width:375px) {
+@media (min-width:675px) {
 
     .row {
-        grid-template-rows: 1fr;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "col-1 col-1"
+        "col-2 col-3";
+    }
+
+    .col-1 {
+        grid-area: col-1;
+    } 
+
+    .col-2 {
+        grid-area: col-2;
+    } 
+
+    .col-3 {
+        grid-area: col-3;
+        padding-right: 35px;
+    }
+
+    .row > .col:nth-child(2) {
+        border-radius: 0 0 0 10px;
+    }
+    
+    .row > .col:nth-child(3) {
+        border-radius: 0 0 10px 0;
     }
 }
 .attribution { font-size: 11px; text-align: center; }
